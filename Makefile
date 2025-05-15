@@ -11,7 +11,7 @@ $(VENV_DIR)/bin/activate:
 install: $(VENV_DIR)/bin/activate
 	@echo "-- Installing pyfastlanes..."
 	$(PYTHON) -m pip install --upgrade pip
-	$(PYTHON) -m pip install pyfastlanes==0.1.3
+	$(PYTHON) -m pip install pyfastlanes==0.1.3post2
 
 run: install
 	@for dataset in $(DATASETS); do \

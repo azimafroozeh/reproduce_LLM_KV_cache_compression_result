@@ -13,8 +13,7 @@ def main():
     args = parser.parse_args()
 
     csv_dir = args.csv_dir
-    fls_dir = "."  # Output .fls file to current directory
-    fls_file = os.path.join(fls_dir, "data.fls")
+    fls_file = "data.fls"
     decoded_csv_path = os.path.join(csv_dir, "decoded.csv")
 
     print(f"-- FastLanes version: {pyfastlanes.get_version()}")
@@ -33,8 +32,8 @@ def main():
 
     # Encode and decode
     conn = pyfastlanes.connect()
-    conn.inline_footer().read_csv(csv_dir).to_fls(fls_dir)
-    reader = conn.read_fls(fls_dir)
+    conn.inline_footer().read_csv(csv_dir).to_fls(fls_file)
+    reader = conn.read_fls(fls_file)
     reader.to_csv(decoded_csv_path)
 
     # Compression statistics
