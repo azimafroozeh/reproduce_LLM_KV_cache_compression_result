@@ -1,6 +1,6 @@
 VENV_DIR := .venv
 PYTHON := $(VENV_DIR)/bin/python
-DEPS := pyfastlanes==0.1.3post2
+DEPS := pyfastlanes==0.1.3post2 pandas
 
 all: run
 

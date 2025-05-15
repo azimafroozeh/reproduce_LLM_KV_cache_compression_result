@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out your repo
+      - uses: actions/checkout@v3
+
+      # 2. (Optional) lock to a specific Python version
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # 3. Run your Makefile target, which creates the venv, installs deps, and runs main.py
+      - name: Install & run
+        run: make run
